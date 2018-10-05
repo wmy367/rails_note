@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="wd-head-navbar-inner" >
+        <div class="wd-head-container">
+            <nav>
+                <ul class="nav pull-right wd-head-right">
+                    <% if current_user%>
+                        <li><%= link_to "#{current_user.name}主页",{controller:'static_pages',action:'home'}%></li>
+                    <% else %>
+                        <li><%= link_to "主页",{controller:'static_pages',action:'home'}%></li>
+                    <% end %>
+                    <li><%= link_to "登陆",{controller:'sessions',action:'new'}%></li>
+                    <li><%= link_to "退出",signout_path,method: :delete,data:{confirm: "是否需要退出?"}%></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

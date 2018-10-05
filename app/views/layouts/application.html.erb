@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Demo1002</title>
+    <title><%= full_title(yield(:sub_title)) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+      <%= render 'layouts/header' %>
+      <% flash.each do |key,value| %>
+        <div class="alert alert-<%= key %>">
+            <%= value %>
+        </div>
+      <% end %>
+      <%= yield %>
   </body>
 </html>
