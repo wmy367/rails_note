@@ -16,7 +16,8 @@ class UsersController < ApplicationController
         # render 'static_pages/home'
         @user = User.new(user_params)
         if @user.save
-            redirect_to action: :show,notice: "创建成功"
+            sign_in @user
+            redirect_to @user,notice: "创建成功"
         else
             render :new
         end
