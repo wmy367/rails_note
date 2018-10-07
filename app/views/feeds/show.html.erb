@@ -1,4 +1,9 @@
 <br>
-<div class="comment-show" style="background-color:<%= notetype_color(@feed) %>">
-    <%= @feed.context %>
+<div class="feed-show-contain" >
+    <div class="comment-show" style="background-color:<%= notetype_color(@feed) %>">
+        <%= @feed.context %>
+        <div class="feed-timetamp" >
+            <%= sc_u_date(@feed)%>
+        </div>
+    </div>
 </div>

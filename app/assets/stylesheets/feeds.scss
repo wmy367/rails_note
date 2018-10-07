@@ -113,6 +113,7 @@
     white-space: pre-wrap;
     width: 300px;
     // float: left;
+    // height: 600px;
 }
 
 #comment_status {
@@ -189,4 +190,19 @@
     position: absolute;
     right: 10px;
     // bottom: 0px;
+}
+
+.feed-timetamp {
+    // position: relative;
+    right: 0px;
+    bottom: 0px;
+    font-size: 10px;
+    // text-align:center；
+    margin-bottom: -55px;
+    padding-left: 115px;
+}
+
+.feed-show-contain {
+    width: 100%;
+    height: 600px;
 }

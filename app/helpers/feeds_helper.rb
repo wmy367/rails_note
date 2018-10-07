@@ -2,12 +2,12 @@ module FeedsHelper
 
     def sc_c_date(item)
         t =item.created_at
-        "#{t.year}年#{t.month}月#{t.day}日"
+        "#{t.year}年#{t.month}月#{t.day}日#{t.hour}时#{t.min}分"
     end
 
     def sc_u_date(item)
         t =item.updated_at
-        "#{t.year}年#{t.month}月#{t.day}日"
+        "#{t.year}年#{t.month}月#{t.day}日#{t.hour}时#{t.min}分"
     end
 
     def notetype_color(feed=nil)
