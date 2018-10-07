@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :feeds
+    
     before_save do
         self.email = email.downcase
     end

@@ -1,0 +1,9 @@
+
+
+<div class="href-comment-show" >
+    <%= link_to item do %>
+        <div class="comment-show" style="background-color:<%= notetype_color(item) %>">
+                <%=  item.context[0,140] %>
+        </div>
+    <% end %>
+</div>

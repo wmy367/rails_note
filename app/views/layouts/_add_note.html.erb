@@ -1,0 +1,30 @@
+<% if float_note_show? %>
+    <%= link_to controller:'static_pages',action:'health_type' do %>
+        <div id='health_note' class="btn btn-success btn-lg top-float-note" >
+            健康
+        </div>
+    <% end %>
+    <%= link_to controller:'static_pages',action:'light_type' do %></li>
+        <div id='light_note' class="btn btn-warning btn-lg top-float-note" >
+            点子
+        </div>
+    <% end %>
+
+    <%= link_to controller:'static_pages',action:'life_type' do %></li>
+        <div id='life_note' class="btn btn-danger btn-lg top-float-note" >
+            生活
+        </div>
+    <% end %>
+
+    <%= link_to controller:'static_pages',action:'emotion_type' do %></li>
+        <div id='emotion_note' class="btn btn-info btn-lg top-float-note" >
+            情感
+        </div>
+    <% end %>
+
+    <%= link_to controller:'feeds',action:'new' do %></li>
+        <div id='add_note' class="btn btn-primary btn-lg" >
+            <%= "添加新#{submit_notetype}日记" %>
+        </div>
+    <% end %>
+<% end %>

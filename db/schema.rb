@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181005063616) do
+ActiveRecord::Schema.define(version: 20181005143638) do
+
+  create_table "feeds", force: :cascade do |t|
+    t.text     "context"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "notetype"
+    t.index ["created_at"], name: "index_feeds_on_created_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

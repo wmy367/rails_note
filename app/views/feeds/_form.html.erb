@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="span6-feed">
+        <br>
+        <%= form_for(item,url:{action:'create'},html:{multipart:true}) do |f| %>
+            <%= f.text_area :context,class:'feed-area'%>
+            <div class="feed-btn-contain" >
+                <%= f.submit "#{submit_label}",class: "btn btn-large #{submit_notetype_btn_color} feed-btn" %>
+            </div>
+        <% end %>
+    </div>
+</div>
