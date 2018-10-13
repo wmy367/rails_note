@@ -14,4 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require loction
+
+function addComment(targetid,targetid2){
+	if (document.getElementById){
+        target=document.getElementById(targetid);
+        target2=document.getElementById(targetid2);
+        commit_id = document.getElementById('comment-commit');
+
+        if (target.style.display=="block"){
+            target.style.display="none";
+            target2.style.display="block";
+        } else {
+            target.style.display="block";
+            target2.style.display="none";
+            commit_id.submit();
+        }
+    }
+}

@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
       store_location
       if current_user
-          @feeds = current_user.feeds.paginate(page: params[:page])
+          @feeds = current_user.feeds.order(:commented_at).paginate(page: params[:page])
       else
           flash[:warning] = "请先登陆"
           @feeds = []
@@ -18,25 +18,30 @@ class StaticPagesController < ApplicationController
   def health_type
     #   cookies.permanent[:notetype] = "health"
       session[:notetype] = "health"
-      redirect_to root_path
+    #   redirect_to root_path
+      @feeds = current_user.feeds.where(notetype: 'health').order(:commented_at).paginate(page: params[:page])
+      render :home
   end
 
   def light_type
     #   cookies.permanent[:notetype] = "light"
-    session[:notetype] = "light"
-      redirect_to root_path
+      session[:notetype] = "light"
+      @feeds = current_user.feeds.where(notetype: 'light').order(:commented_at).paginate(page: params[:page])
+      render :home
   end
 
   def life_type
     #   cookies.permanent[:notetype] = "life"
       session[:notetype] = "life"
-      redirect_to root_path
+      @feeds = current_user.feeds.where(notetype: 'life').order(:commented_at).paginate(page: params[:page])
+      render :home
   end
 
   def emotion_type
     #   cookies.permanent[:notetype] = "emotion"
       session[:notetype] = "emotion"
-      redirect_to root_path
+      @feeds = current_user.feeds.where(notetype: 'emotion').order(:commented_at).paginate(page: params[:page])
+      render :home
   end
 
   def float_note_ctrl

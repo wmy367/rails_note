@@ -27,4 +27,6 @@ Rails.application.routes.draw do
    get 'static_pages/emotion_type'
    get 'static_pages/float_note_ctrl'
 
+   resources :comments,only:[:create]
+
 end

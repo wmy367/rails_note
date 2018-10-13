@@ -23,7 +23,7 @@
     height: 120px;
 }
 
-.comment-show {
+.feed-show {
     background-color: rgb(200, 200, 238);
     border-bottom-color: rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 4px;
@@ -52,27 +52,28 @@
     display: block;
     floatleftfont-family: Monaco,Menlo,Consolas,"Courier New",monospace;
     font-size: 13px;
-    line-height: 20px;
+    // line-height: 20px;
+    line-height: 14px;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 0px;
     overflow-wrap: break-word;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 5px;
     white-space: pre-wrap;
     width: 300px;
     // float: left;
 }
 
-.href-comment-show {
+.href-feed-show {
     width: 300px;
     margin-left: 5px;
     // float: left;
 }
 
-.master-comment-show {
+.master-feed-show {
     background-color: rgb(200, 238, 200);
     border-bottom-color: rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 4px;
@@ -106,10 +107,10 @@
     margin-left: 30px;
     margin-right: 0px;
     overflow-wrap: break-word;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 5px;
     white-space: pre-wrap;
     width: 300px;
     // float: left;
@@ -194,15 +195,21 @@
 
 .feed-timetamp {
     // position: relative;
-    right: 0px;
+    right: 4px;
     bottom: 0px;
     font-size: 10px;
+    line-height: 8px;
+    text-align: right;
     // text-align:center；
-    margin-bottom: -55px;
-    padding-left: 115px;
+    margin-bottom: -35px;
+    // padding-left: 120px;
+}
+
+.feed-timetamp-comment {
+    color: #F02;
 }
 
 .feed-show-contain {
     width: 100%;
-    height: 600px;
+    // height: 600px;
 }

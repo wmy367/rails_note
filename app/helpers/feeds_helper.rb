@@ -10,6 +10,15 @@ module FeedsHelper
         "#{t.year}年#{t.month}月#{t.day}日#{t.hour}时#{t.min}分"
     end
 
+    def sc_uoc_date(item)
+        if item.commented_at
+            t = item.commented_at
+        else
+            t =item.updated_at
+        end
+        "#{t.year}年#{t.month}月#{t.day}日#{t.hour}时#{t.min}分"
+    end
+
     def notetype_color(feed=nil)
         unless feed
             # ca = cookies[:notetype]
@@ -47,9 +56,15 @@ module FeedsHelper
         end
     end
 
-    def submit_notetype_btn_color
+    def submit_notetype_btn_color(feed=nil)
         # case cookies[:notetype]
-        case session[:notetype]
+        unless feed
+            ty = session[:notetype]
+        else
+            ty = feed.notetype
+        end
+
+        case ty
         when 'health'
             "btn-success"
         when 'light'

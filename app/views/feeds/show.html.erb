@@ -1,9 +1,23 @@
 <br>
-<div class="feed-show-contain" >
-    <div class="comment-show" style="background-color:<%= notetype_color(@feed) %>">
-        <%= @feed.context %>
-        <div class="feed-timetamp" >
-            <%= sc_u_date(@feed)%>
+<div id="feed-comment-show-ctrl" style="display:block;">
+    <div class="feed-show-contain" >
+        <div class="feed-show" style="background-color:<%= notetype_color(@feed) %>">
+            <%= @feed.context %>
+            <div class="feed-timetamp" >
+                <%= sc_c_date(@feed)%>
+            </div>
         </div>
     </div>
+
+    <div class="feed-comment-contain" >
+        <% @comments.reverse_each do |i| %>
+            <%= render 'comments/show_comment',item: i  %>
+        <% end %>
+        <%= will_paginate @comments %>
+    </div>
 </div>
+<div id="feed-comment-show-ctrl-not" class="new-comment-contain" style="display:none;">
+    <%= render "comments/form.html.erb",curr_feed: @feed,show_btn:false %>
+</div>
+
+<%= render "comments/add_comment_button",curr_feed:@feed %>

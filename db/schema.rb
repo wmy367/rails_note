@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181005143638) do
+ActiveRecord::Schema.define(version: 20181013121140) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "context"
+    t.integer  "feed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "feeds", force: :cascade do |t|
     t.text     "context"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "notetype"
+    t.datetime "commented_at"
     t.index ["created_at"], name: "index_feeds_on_created_at"
   end
 
