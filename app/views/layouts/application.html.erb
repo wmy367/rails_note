@@ -35,7 +35,7 @@
       <!-- <div class="container"> -->
 
          <%= yield %>
-         <%= debug(params) unless Rails.env.production? %>
+         <%= debug(params) unless Rails.env.production? || true %>
      </div>
      <%= render 'layouts/add_note' %>
   </body>
