@@ -77,4 +77,13 @@ module FeedsHelper
             "btn-primary"
         end
     end
+
+    def feed_assign_commented_at(feeds)
+        feeds.each do |fd|
+            unless fd.commented_at
+                fd.update_attribute(:commented_at,fd.created_at)
+            end
+        end
+        return feeds
+    end
 end

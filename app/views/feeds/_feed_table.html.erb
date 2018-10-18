@@ -6,7 +6,7 @@
                 <%=  item.context[0,140] %>
                 <div class="feed-timetamp" >
                     <span><%= sc_c_date(item)%></span>
-                    <% if item.commented_at %>
+                    <% if item.commented_at != item.created_at %>
                         <i class="feed-timetamp-comment" >
                             <%= sc_uoc_date(item)%>
                         </i>
