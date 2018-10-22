@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   def home
       store_location
       if current_user
-          @feeds = current_user.feeds.order(:commented_at).paginate(page: params[:page])
+          @feeds = current_user.feeds.order(:commented_at).reverse_order.paginate(page: params[:page])
         #    @feeds = current_user.feeds.order_by do |item|
         #        item.commented_at || item.created_at
         #    end.paginate(page: params[:page])

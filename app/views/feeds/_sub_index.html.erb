@@ -1,6 +1,6 @@
 <br>
 <%= will_paginate @feeds %>
-    <% @feeds.reverse_each do |i| %>
+    <% @feeds.each do |i| %>
         <%= render 'feeds/feed_table',item: i  %>
     <% end %>
 <%= will_paginate @feeds %>
