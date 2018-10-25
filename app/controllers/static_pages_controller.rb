@@ -24,7 +24,7 @@ class StaticPagesController < ApplicationController
       session[:notetype] = "health"
       store_location
     #   redirect_to root_path
-      @feeds = current_user.feeds.where(notetype: 'health').order(:commented_at).paginate(page: params[:page])
+      @feeds = current_user.feeds.where(notetype: 'health').order(:commented_at).reverse_order.paginate(page: params[:page])
       feed_assign_commented_at(@feeds)
       render :home
   end
@@ -33,7 +33,7 @@ class StaticPagesController < ApplicationController
     #   cookies.permanent[:notetype] = "light"
       session[:notetype] = "light"
       store_location
-      @feeds = current_user.feeds.where(notetype: 'light').order(:commented_at).paginate(page: params[:page])
+      @feeds = current_user.feeds.where(notetype: 'light').order(:commented_at).reverse_order.paginate(page: params[:page])
       feed_assign_commented_at(@feeds)
       render :home
   end
@@ -42,7 +42,7 @@ class StaticPagesController < ApplicationController
     #   cookies.permanent[:notetype] = "life"
       session[:notetype] = "life"
       store_location
-      @feeds = current_user.feeds.where(notetype: 'life').order(:commented_at).paginate(page: params[:page])
+      @feeds = current_user.feeds.where(notetype: 'life').order(:commented_at).reverse_order.paginate(page: params[:page])
       feed_assign_commented_at(@feeds)
       render :home
   end
@@ -51,7 +51,7 @@ class StaticPagesController < ApplicationController
     #   cookies.permanent[:notetype] = "emotion"
       session[:notetype] = "emotion"
       store_location
-      @feeds = current_user.feeds.where(notetype: 'emotion').order(:commented_at).paginate(page: params[:page])
+      @feeds = current_user.feeds.where(notetype: 'emotion').order(:commented_at).reverse_order.paginate(page: params[:page])
       feed_assign_commented_at(@feeds)
       render :home
   end

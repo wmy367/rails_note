@@ -12,6 +12,8 @@ class FeedsController < ApplicationController
         fd = Feed.new(feed_params)
         fd.user = current_user
         # fd.notetype = cookies[:notetype]
+        fd.commented_at = fd.created_at
+        
         fd.notetype = session[:notetype]
         if fd.save
             flash[:notice]  = "日记记录成功"
